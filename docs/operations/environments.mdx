@@ -1,0 +1,16 @@
+---
+title: Environments
+description: Separate dev, staging, and production safely.
+---
+
+Use workspaces to separate environments and avoid cross-contamination of billing data.
+
+## Recommended setup
+- `dev`: experimentation and schema evolution
+- `staging`: validation against production-like traffic
+- `prod`: authoritative billing data
+
+## Key practices
+- Separate API keys per workspace.
+- Never share customers across environments.
+- Keep pricing changes versioned and reviewed.

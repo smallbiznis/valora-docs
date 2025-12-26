@@ -1,0 +1,43 @@
+---
+title: Quickstart (OSS)
+description: Deploy the runtime, ingest usage, and verify the ledger.
+---
+
+This walkthrough targets a minimal self-hosted setup for Valora OSS.
+
+## Prerequisites
+- PostgreSQL 14+
+- Object storage for invoice artifacts (S3-compatible)
+- Docker or a container runtime
+
+## 1. Configure the runtime
+Set the required environment variables for database, storage, and API keys.
+
+```bash
+export VALORA_DATABASE_URL="postgres://valora:valora@localhost:5432/valora"
+export VALORA_STORAGE_BUCKET="valora-invoices"
+export VALORA_API_KEY_SEED="change-me"
+```
+
+## 2. Start the services
+Run the Valora runtime services and confirm health checks pass.
+
+## 3. Bootstrap your org and admin
+Use the bootstrap command or API to create the first organization, workspace, and admin user.
+
+## 4. Send a usage event
+```bash
+curl -X POST http://localhost:8080/v1/usage/events \
+  -H "Authorization: Bearer $VALORA_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "event_id": "evt_01HZZJNNM2TT2",
+    "customer_id": "cus_oss_001",
+    "meter_id": "meter_api_requests",
+    "timestamp": "2024-01-12T15:04:05Z",
+    "quantity": 42
+  }'
+```
+
+## 5. Verify the ledger
+Query the ledger endpoint for the customer and ensure a matching entry was recorded for the usage event.

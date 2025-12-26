@@ -1,0 +1,16 @@
+---
+title: Authentication (API keys)
+description: Secure usage ingestion with scoped keys.
+---
+
+Usage ingestion uses API keys scoped to a workspace.
+
+## Header format
+Send the key in the `Authorization` header:
+
+```bash
+-H "Authorization: Bearer $VALORA_API_KEY"
+```
+
+## Scope
+Keys can be scoped to specific meters or customer segments. Use least-privilege keys for ingestion from edge systems.

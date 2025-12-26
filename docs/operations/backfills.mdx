@@ -1,0 +1,11 @@
+---
+title: Backfills
+description: Ingest historical usage safely.
+---
+
+Backfills let you ingest historical usage data without double billing.
+
+## Best practices
+- Use the original `timestamp` for occurred time.
+- Maintain unique `event_id` values.
+- Ingest in order to reduce reconciliation churn.

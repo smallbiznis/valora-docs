@@ -1,0 +1,12 @@
+---
+title: Batching & idempotency
+description: Deliver events efficiently and safely.
+---
+
+Batching reduces request overhead and idempotency prevents double billing.
+
+## Batching
+Use the batch endpoint to submit many events in one request. Each event is processed independently so partial failures return per-event status.
+
+## Idempotency
+`event_id` is the idempotency key. Reusing an `event_id` results in a `409 Conflict` without creating additional ledger entries.

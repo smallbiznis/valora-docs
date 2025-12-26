@@ -1,0 +1,31 @@
+---
+title: Event schema
+description: Required fields for usage events.
+---
+
+Usage events are JSON objects with a small set of required fields.
+
+## Required fields
+- `event_id`: unique identifier for idempotency
+- `customer_id`: your customer identifier
+- `meter_id`: the meter that applies to the event
+- `timestamp`: ISO-8601 timestamp
+- `quantity`: numeric value in meter units
+
+## Optional fields
+- `properties`: free-form dimensions for analysis and filtering
+
+## Example
+```json
+{
+  "event_id": "evt_01HZZK4R5X4V2",
+  "customer_id": "cus_123",
+  "meter_id": "meter_api_requests",
+  "timestamp": "2024-01-12T15:04:05Z",
+  "quantity": 500,
+  "properties": {
+    "region": "us-east-1",
+    "endpoint": "/v1/usage/events"
+  }
+}
+```

@@ -1,0 +1,14 @@
+---
+title: Billing API (read-only)
+description: Query invoices and ledger entries.
+---
+
+The Billing API provides read-only access to billing artifacts.
+
+## Endpoints
+- `GET /v1/billing/customers/{customer_id}`
+- `GET /v1/billing/invoices?customer_id=...`
+- `GET /v1/billing/ledger/entries?customer_id=...`
+
+## Notes
+Billing endpoints are eventually consistent with usage ingestion and rating.

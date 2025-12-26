@@ -1,0 +1,46 @@
+---
+title: Examples
+description: Practical usage ingestion examples.
+---
+
+## Single event
+```bash
+curl -X POST https://api.valora.cloud/v1/usage/events \
+  -H "Authorization: Bearer $VALORA_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "event_id": "evt_01HZZK8Z9BZ8Q",
+    "customer_id": "cus_456",
+    "meter_id": "meter_storage_gb",
+    "timestamp": "2024-01-12T15:04:05Z",
+    "quantity": 12.5,
+    "properties": {
+      "region": "eu-west-1"
+    }
+  }'
+```
+
+## Batch events
+```bash
+curl -X POST https://api.valora.cloud/v1/usage/events:batch \
+  -H "Authorization: Bearer $VALORA_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "events": [
+      {
+        "event_id": "evt_01HZZKBF4X0T9",
+        "customer_id": "cus_456",
+        "meter_id": "meter_storage_gb",
+        "timestamp": "2024-01-12T15:04:05Z",
+        "quantity": 10
+      },
+      {
+        "event_id": "evt_01HZZKBF7HR7B",
+        "customer_id": "cus_456",
+        "meter_id": "meter_storage_gb",
+        "timestamp": "2024-01-12T15:05:05Z",
+        "quantity": 2.5
+      }
+    ]
+  }'
+```

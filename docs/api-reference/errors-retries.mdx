@@ -1,0 +1,19 @@
+---
+title: Errors & retries
+description: Common errors and how to recover.
+---
+
+Valora uses conventional HTTP status codes.
+
+## Common responses
+- `400` invalid payload or schema
+- `401` missing or invalid API key
+- `403` insufficient scope
+- `409` duplicate `event_id`
+- `429` rate limit exceeded
+- `5xx` transient server error
+
+## Retry guidance
+- Retry `429` and `5xx` with exponential backoff.
+- Do not retry `409` without changing `event_id`.
+- Use idempotency to safely retry timeouts.

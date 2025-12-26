@@ -1,0 +1,20 @@
+---
+title: Usage API
+description: Endpoints for ingesting and querying usage.
+---
+
+The Usage API ingests events and exposes status endpoints for verification.
+
+## Endpoints
+- `POST /v1/usage/events` - ingest a single usage event
+- `POST /v1/usage/events:batch` - ingest a batch of events
+- `GET /v1/usage/events/{event_id}` - check event status
+
+## Response shape
+```json
+{
+  "event_id": "evt_01HZZKBF4X0T9",
+  "status": "accepted",
+  "rated_at": "2024-01-12T15:04:10Z"
+}
+```

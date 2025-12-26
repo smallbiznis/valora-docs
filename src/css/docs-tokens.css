@@ -1,0 +1,76 @@
+:root {
+  --valora-font-sans: "Satoshi", "Manrope", "Space Grotesk", sans-serif;
+  --valora-font-mono: "JetBrains Mono", "IBM Plex Mono", "SFMono-Regular", monospace;
+
+  --valora-accent: #2fd07f;
+  --valora-accent-strong: #1fb56a;
+  --valora-accent-soft: rgba(47, 208, 127, 0.12);
+
+  --valora-neutral-0: #f6f8fb;
+  --valora-neutral-50: #eef2f5;
+  --valora-neutral-100: #dde3e8;
+  --valora-neutral-200: #c5ced6;
+  --valora-neutral-300: #9aa6b1;
+  --valora-neutral-400: #768390;
+  --valora-neutral-500: #56606b;
+  --valora-neutral-600: #3c444d;
+  --valora-neutral-700: #2a3037;
+  --valora-neutral-800: #1b2026;
+  --valora-neutral-900: #0f1418;
+
+  --valora-surface-base: #f6f8fb;
+  --valora-surface-raised: #ffffff;
+  --valora-surface-elevated: #eff3f6;
+  --valora-surface-sunken: #e6edf2;
+
+  --valora-border-subtle: rgba(15, 20, 24, 0.08);
+  --valora-border-strong: rgba(15, 20, 24, 0.16);
+
+  --valora-text-primary: #0f1418;
+  --valora-text-secondary: #303842;
+  --valora-text-muted: #58626f;
+  --valora-text-faint: #7b8794;
+  --valora-text-inverse: #f8fbfd;
+
+  --valora-code-bg: #0c1216;
+  --valora-code-border: rgba(15, 20, 24, 0.4);
+  --valora-code-text: #e7f0f4;
+  --valora-code-highlight: rgba(47, 208, 127, 0.16);
+}
+
+[data-theme='dark'] {
+  --valora-accent: #33d684;
+  --valora-accent-strong: #21b46b;
+  --valora-accent-soft: rgba(51, 214, 132, 0.16);
+
+  --valora-neutral-0: #0b0f13;
+  --valora-neutral-50: #0f1419;
+  --valora-neutral-100: #151b21;
+  --valora-neutral-200: #1b222a;
+  --valora-neutral-300: #2b343d;
+  --valora-neutral-400: #3c4651;
+  --valora-neutral-500: #56616e;
+  --valora-neutral-600: #7a8695;
+  --valora-neutral-700: #9aa6b3;
+  --valora-neutral-800: #c1cad3;
+  --valora-neutral-900: #e5ebf1;
+
+  --valora-surface-base: #0b0f13;
+  --valora-surface-raised: #10161c;
+  --valora-surface-elevated: #141b22;
+  --valora-surface-sunken: #0e1318;
+
+  --valora-border-subtle: rgba(148, 163, 184, 0.16);
+  --valora-border-strong: rgba(148, 163, 184, 0.28);
+
+  --valora-text-primary: #e7edf3;
+  --valora-text-secondary: #c5ced7;
+  --valora-text-muted: #9aa6b3;
+  --valora-text-faint: #768392;
+  --valora-text-inverse: #0b0f13;
+
+  --valora-code-bg: #0b1116;
+  --valora-code-border: rgba(148, 163, 184, 0.2);
+  --valora-code-text: #e9f2f6;
+  --valora-code-highlight: rgba(51, 214, 132, 0.18);
+}

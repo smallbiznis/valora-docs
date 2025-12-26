@@ -1,0 +1,43 @@
+---
+title: Quickstart (Cloud)
+description: Send your first usage event and generate a draft invoice.
+---
+
+This walkthrough gets you from zero to a rated usage event in Valora Cloud.
+
+## Prerequisites
+- A Valora Cloud organization and workspace
+- An API key with usage ingestion permissions
+
+## 1. Create a product and pricing
+Create a product with a usage-based component (for example, API calls). Configure pricing with a per-unit rate and billing cadence.
+
+## 2. Create a meter
+Meters define how incoming events map to billable usage. Example meter fields:
+- `event_name`: `api.request`
+- `value_path`: `$.quantity`
+- `unit`: `request`
+
+## 3. Send a usage event
+```bash
+curl -X POST https://api.valora.cloud/v1/usage/events \
+  -H "Authorization: Bearer $VALORA_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "event_id": "evt_01HZZJH9M1TT1",
+    "customer_id": "cus_123",
+    "meter_id": "meter_api_requests",
+    "timestamp": "2024-01-12T15:04:05Z",
+    "quantity": 128,
+    "properties": {
+      "region": "us-east-1",
+      "route": "/v1/usage/events"
+    }
+  }'
+```
+
+## 4. Preview the invoice
+Use the Billing API to fetch the draft invoice or current period summary for the customer. Verify that the event appears as a rated line item.
+
+## 5. Go live
+Once you are confident in metering and pricing, enable the production workspace and rotate keys for your production workloads.

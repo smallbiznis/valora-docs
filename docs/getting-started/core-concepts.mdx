@@ -1,0 +1,19 @@
+---
+title: Core concepts
+description: Key entities and how they connect.
+---
+
+Valora is built around a few core entities that map directly to how SaaS businesses charge for usage.
+
+## Key entities
+- Organization: the top-level account boundary.
+- Workspace: an environment within an organization (dev, staging, prod).
+- Product: what you sell to customers.
+- Price: how you charge (recurring, usage, tiered).
+- Meter: how usage is measured.
+- Rating: how usage becomes billable amounts.
+- Ledger entry: the immutable financial record.
+- Invoice: the customer-facing rollup of ledger entries.
+
+## Typical lifecycle
+Define products and meters, ingest usage, rate events, review ledger entries, and generate invoices.

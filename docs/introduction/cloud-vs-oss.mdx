@@ -1,0 +1,21 @@
+---
+title: Cloud vs OSS
+description: When to use Valora Cloud, Valora OSS, or both.
+---
+
+Valora Cloud and Valora OSS are designed to work together, but you can choose the model that fits your compliance, latency, and operational needs.
+
+## Comparison
+
+| Dimension | Valora Cloud | Valora OSS |
+| --- | --- | --- |
+| Hosting | Managed control plane | Self-hosted runtime |
+| Usage ingestion | Optional (hosted) | Required (your infra) |
+| Configuration | UI + API | API or config-first |
+| Compliance | Cloud managed | You control data locality |
+| Upgrades | Automatic | You schedule and run |
+
+## Common patterns
+- Cloud-only for fast teams that want managed control and ingestion.
+- Hybrid: Cloud for control plane, OSS runtime for data locality.
+- OSS-only for strict compliance or air-gapped environments.

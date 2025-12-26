@@ -1,0 +1,16 @@
+---
+title: API overview
+description: Endpoints and flow for usage ingestion.
+---
+
+The Usage API ingests events and turns them into rated usage.
+
+## Base URLs
+- Cloud: `https://api.valora.cloud`
+- OSS: your runtime endpoint (for example `https://billing.internal`)
+
+## Typical flow
+1. Authenticate with an API key.
+2. Post usage events (single or batch).
+3. Query event status or ledger entries.
+4. Review invoice previews.

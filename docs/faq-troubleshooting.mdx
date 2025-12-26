@@ -1,0 +1,13 @@
+---
+title: FAQ / Troubleshooting
+description: Answers to common integration questions.
+---
+
+## Why is an event missing from the ledger?
+Ensure the event passed schema validation and that the meter matched the event. Check event status via `GET /v1/usage/events/{event_id}`.
+
+## Why did I receive a 409 error?
+A `409` indicates a duplicate `event_id`. Generate a new unique ID and retry.
+
+## How do I validate invoices before sending them?
+Use the draft invoice endpoint and compare line items against your internal usage reports.

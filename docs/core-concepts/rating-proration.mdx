@@ -1,0 +1,14 @@
+---
+title: Rating & proration
+description: Turn usage into billable amounts and handle time-based changes.
+---
+
+Rating converts usage into billable amounts based on pricing rules.
+
+## Rating flow
+- Validate the event against a meter.
+- Apply pricing rules and tiers.
+- Emit ledger entries with monetary amounts.
+
+## Proration
+Valora supports proration when subscriptions or pricing change mid-cycle. Rating records the delta as separate ledger entries for clear audit trails.

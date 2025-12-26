@@ -1,0 +1,20 @@
+---
+title: Architecture overview
+description: How Valora is structured across control plane and runtime.
+---
+
+Valora separates configuration from execution so you can manage pricing and billing policies centrally while keeping usage processing close to your data.
+
+## Control plane and runtime
+- Control plane (Cloud): manages orgs, workspaces, pricing, and configuration.
+- Runtime (OSS): ingests usage, rates events, and writes ledger entries.
+
+## Data flow
+1. Usage events are posted to the Usage API.
+2. Metering validates and normalizes events.
+3. Rating computes billable quantities and prices.
+4. Ledger writes immutable entries.
+5. Invoicing aggregates ledger entries into invoices.
+
+## Storage and audit
+Ledger entries are the source of truth. Every invoice line item references the underlying ledger entries for traceability and reconciliation.
